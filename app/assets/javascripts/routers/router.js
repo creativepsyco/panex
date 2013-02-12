@@ -17,6 +17,6 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 	},
 
 	loadProfile: function () {
-		alert("Hi Profile");
+		console.log("Within LoadProfile");
 	}
 });
