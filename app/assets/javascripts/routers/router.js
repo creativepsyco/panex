@@ -1,7 +1,8 @@
 Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 	routes: {
 		'dashboard': 'loadDashboard',
-		'profile': 'loadProfile'
+		'profile': 'loadProfile',
+		'patient/add': 'addPatient'
 	},
 
 	initialize: function() {
@@ -18,5 +19,14 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 
 	loadProfile: function () {
 		console.log("Within LoadProfile");
+	},
+
+	addPatient: function() {
+		console.log("[Adding Patient View] Loaded");
+		var patient = new Panex.Models.Patient({});
+		var addPatientView = new Panex.Views.PatientAdd({
+			model: patient
+		});
+		Panex.mainContent.show(addPatientView);
 	}
 });
