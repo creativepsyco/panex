@@ -708,7 +708,7 @@ footer a {
   filter: progid:dximagetransform.microsoft.gradient(startColorStr='#dddde2', EndColorStr='#f9f9f9');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a93018',EndColorStr='#e45d43')";
 }
-.well {
+/*.well {
   background-color: #fff;
   border: 1px solid #ccc;
   -webkit-box-shadow: 1px 1px 0px #ffffff;
@@ -724,7 +724,7 @@ footer a {
 .well h2 {
   line-height: 1em;
   margin-top: 0px;
-}
+}*/
 /*Faq*/
 .faq-content ul,
 .faq-content ol {
@@ -1914,3 +1914,4 @@ ul.nav.nav-tabs.fancy  > li.active  > a:hover {
 	overflow: hidden;
 }
 
+@import "override.css";

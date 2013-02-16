@@ -11,139 +11,142 @@
     $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
   });
   </script>
-  <body>
+<body>
 
-    <p class="notice">
-      <%= notice %></p>
-      <p class="alert">
-        <%= alert %></p>
+  <p class="notice">
+    <%= notice %></p>
+  <p class="alert">
+    <%= alert %></p>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="navbar-inner">
-            <div class="container-fluid">
-              <a class="brand" href="#">Panex</a>
-              <ul class="nav pull-right">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Panex</a>
+        <ul class="nav pull-right">
 
-                <% if user_signed_in? %>
-                <li>
-                  <a id="profile-nav" href="/#profile">Profile</a>
-                </li>
-                <li>
-                  <a id="dashboard-nav" href="/#">Dashboard</a>
-                </li>
+          <% if user_signed_in? %>
+          <li>
+            <a id="profile-nav" href="/#profile">Profile</a>
+          </li>
+          <li>
+            <a id="dashboard-nav" href="/#">Dashboard</a>
+          </li>
 
-                <li>
-                  <a href="#settings">Settings</a>
-                </li>
-                <li>
-                  <%= link_to('Logout', destroy_user_session_path, :method =>:delete) %></li>
-                  <% else %>
-                  <li>
-                    <%= link_to('Login', new_user_session_path)  %></li>
-                    <% end %></ul>
-                  </div>
+          <li>
+            <a href="#settings">Settings</a>
+          </li>
+          <li>
+            <%= link_to('Logout', destroy_user_session_path, :method =>:delete) %></li>
+          <% else %>
+          <li>
+            <%= link_to('Login', new_user_session_path)  %></li>
+          <% end %></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="sidebar-nav-left" class="sidebar-nav">
+
+      <ul id="dashboard-menu" class="nav nav-list">
+
+        <li class="active">
+          <a href="media.html"> <i class="icon-film"></i>
+            <span>Media</span>
+          </a>
+        </li>
+
+        <li class=" ">
+          <a href="icons.html"> <i class="icon-heart"></i>
+            <span>Font Awesome</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <div id="sidebar-nav-right" class="sidebar-nav">
+      <div class="btn-grp">
+        <a href="#patient/add" class="btn">
+          <span>Add Patient</span>
+        </a>
+
+        <a href="#visit/add" class="btn">
+          <span>Add Visit</span>
+        </a>
+
+        <a href="index.html" class="btn btn-primary">
+          <span>Log Out</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="main-content" class="content">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div id="top-panel" class="span12 main-content">
+            <p>
+              <form class="form-search">
+                <div class="input-append" style="width:100%;">
+                  <input type="text" class="span11 search-query">
+                  <button type="submit" class="btn">Search</button>
                 </div>
-              </div>
-              <div id="sidebar-nav-left" class="sidebar-nav">
+              </form>
+            </p>
+            <div id="table-container"></div>
+          </div>
 
-                <ul id="dashboard-menu" class="nav nav-list">
+          <hr class="span12">
 
-                  <li class="active">
-                    <a href="media.html"> <i class="icon-film"></i>
-                      <span>Media</span>
-                    </a>
-                  </li>
-
-                  <li class=" ">
-                    <a href="icons.html"> <i class="icon-heart"></i>
-                      <span>Font Awesome</span>
-                    </a>
-                  </li>
-
-                </ul>
-              </div>
-              <div id="sidebar-nav-right" class="sidebar-nav">
-                <div class="btn-grp">
-                  <a href="#patient/add" class="btn">
-                    <span>Add Patient</span>
-                  </a>
-
-                  <a href="#visit/add" class="btn">
-                    <span>Add Visit</span>
-                  </a>
-
-                  <a href="index.html" class="btn btn-primary">
-                    <span>Log Out</span>
-                  </a>
-                </div>
+          <div id="bottom-panel" class="span12 data-panel">
+            <div class="row project-list">
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
               </div>
 
-              <div id="main-content" class="content">
-                <div class="container-fluid">
-                  <div class="row-fluid">
-                    <div id="top-panel" class="span12 main-content">
-                      <p>
-                        <form class="form-search">
-                          <div class="input-append" style="width:100%;">
-                            <input type="text" class="span11 search-query">
-                            <button type="submit" class="btn">Search</button>
-                          </div>
-                        </form>
-                      </p>
-                      <div id="table-container">
-                      </div>
-                    </div>
-
-                    <hr class="span12">
-
-                    <div id="bottom-panel" class="span12 data-panel">
-                      <div class="row project-list">
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span.. a span. a spana spana spana spana span</p>
-                        </div>
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-
-                        <div class="span2 data-item">
-                          <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
-                          <p class="caption">This is a span</p>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <footer>
-                      <p>
-                        © 2013
-                        <a href="#">Mohit Singh Kanwal @ NUS</a>
-                      </p>
-                    </footer>
-
-                  </div>
-                </div>
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span.. a span. a spana spana spana spana span</p>
+              </div>
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
               </div>
 
-            </body>
-            </html>
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
+              </div>
+
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
+              </div>
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
+              </div>
+
+              <div class="span2 data-item">
+                <img src="http://lorempixel.com/200/200/" class="img-polaroid"/>
+                <p class="caption">This is a span</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <footer>
+          <p>
+            © 2013
+            <a href="#">Mohit Singh Kanwal @ NUS</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
