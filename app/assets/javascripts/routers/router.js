@@ -4,15 +4,17 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 		'profile': 'loadProfile',
 		'patient/add': 'addPatient',
 		'visit/add': 'addVisit',
-		
-		'service/add' : 'addService',
-		'service/view' : 'viewService'
+		// Services
+		'service/add': 'addService',
+		'service/view': 'viewService',
+		// Apps
+		'app/add': 'addApp',
+		'app/view': 'viewApp'
 	},
 
-	initialize: function() {
-	},
+	initialize: function() {},
 
-	loadDashboard: function () {
+	loadDashboard: function() {
 		// var patientCollection = new Panex.Collections.PatientCollection([{name:'Mohit'}]);
 		// var table = new Panex.Views.PatientTable({
 		// 	collection: patientCollection,
@@ -22,7 +24,7 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 		Panex.mainContent.show(table);
 	},
 
-	loadProfile: function () {
+	loadProfile: function() {
 		console.log("Within LoadProfile");
 	},
 
@@ -44,7 +46,7 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 
 	// Services
 	addService: function() {
-		var visit = new Panex.Models.Service({});
+		var serviceModel = new Panex.Models.Service({});
 		var addServiceNew = new Panex.Views.ServiceAdd();
 		Panex.mainContent.show(addServiceNew);
 		console.log("[Router] Loading Add Service Page completed");
@@ -54,5 +56,18 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 		var serviceView = new Panex.Views.ServiceView();
 		Panex.mainContent.show(serviceView);
 		console.log("[Router] Loading View Service Page completed");
+	},
+
+	addApp: function() {
+		var appModel = new Panex.Models.App({});
+		var addAppView = new Panex.Views.AppAdd();
+		Panex.mainContent.show(addAppView);
+		console.log("[Router] Add App View Loaded");
+	},
+
+	viewApp: function() {
+		var appView = new Panex.Views.AppView();
+		Panex.mainContent.show(appView);
+		console.log("[Router] View App View load completed");
 	}
 });
