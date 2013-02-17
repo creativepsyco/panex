@@ -7,132 +7,151 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %></head>
   <script type="text/javascript">
+
+  $(document).on("focus", "a[rel~='popover']", function(e){
+    $(this).popover();
+  });
+
   $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
   });
   </script>
-  <body>
+<body>
 
-    <p class="notice">
-      <%= notice %></p>
-      <p class="alert">
-        <%= alert %></p>
+  <p class="notice">
+    <%= notice %></p>
+  <p class="alert">
+    <%= alert %></p>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="navbar-inner">
-            <div class="container-fluid">
-              <a class="brand" href="#">Panex</a>
-              <ul class="nav pull-right">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Panex</a>
+        <ul class="nav pull-right">
 
-                <% if user_signed_in? %>
-                <li>
-                  <a id="profile-nav" href="/#profile">Profile</a>
-                </li>
-                <li>
-                  <a id="dashboard-nav" href="/#">Dashboard</a>
-                </li>
+          <% if user_signed_in? %>
+          <li>
+            <a id="profile-nav" href="/#profile">Profile</a>
+          </li>
+          <li>
+            <a id="dashboard-nav" href="/#">Dashboard</a>
+          </li>
 
-                <li>
-                  <a href="#settings">Settings</a>
-                </li>
-                <li>
-                  <%= link_to('Logout', destroy_user_session_path, :method =>:delete) %></li>
-                  <% else %>
-                  <li>
-                    <%= link_to('Login', new_user_session_path)  %></li>
-                    <% end %></ul>
-                  </div>
-                </div>
-              </div>
+          <li>
+            <a href="#settings">Settings</a>
+          </li>
+          <li>
+            <%= link_to('Logout', destroy_user_session_path, :method =>:delete) %></li>
+          <% else %>
+          <li>
+            <%= link_to('Login', new_user_session_path)  %></li>
+          <% end %></ul>
+      </div>
+    </div>
+  </div>
 
-              <div class="row">
-                <div id="sidebar-nav-left" class="sidebar-nav">
+  <div class="row">
+    <div id="sidebar-nav-left" class="sidebar-nav">
 
-                  <ul id="dashboard-menu" class="nav nav-list">
+      <ul id="dashboard-menu" class="nav nav-list">
 
-                    <li class="active">
-                      <a href="media.html"> <i class="icon-film"></i>
-                        <span>Media</span>
-                      </a>
-                    </li>
+        <li class="active">
+          <a href="media.html"> <i class="icon-film"></i>
+            <span>Media</span>
+          </a>
+        </li>
 
-                    <li class=" ">
-                      <a href="icons.html"> <i class="icon-heart"></i>
-                        <span>Font Awesome</span>
-                      </a>
-                    </li>
+        <li class=" ">
+          <a href="icons.html"> <i class="icon-heart"></i>
+            <span>Font Awesome</span>
+          </a>
+        </li>
 
-                  </ul>
-                </div>
+      </ul>
+    </div>
 
-                <div id="sidebar-nav-right" class="sidebar-nav">
+    <div id="sidebar-nav-right" class="sidebar-nav">
 
-                  <ul id="dashboard-menu" class="nav nav-list">
+      <ul id="dashboard-menu" class="nav nav-list">
 
-                    <li class="active">
-                      <a href="#patient/add"> <i class="icon-plus"></i>
-                        <span>Add Patient</span>
-                      </a>
-                    </li>
+        <li class="active">
+          <a href="#patient/add">
+            <i class="icon-user-md"></i>
+            <span>Add Patient</span>
+          </a>
+        </li>
 
-                    <li class=" ">
-                      <a href="#visit/add"> <i class="icon-plus"></i>
-                        <span>Add Visit</span>
-                      </a>
-                    </li>
+        <li class=" ">
+          <a href="#visit/add">
+            <i class="icon-user-md"></i>
+            <span>Add Visit</span>
+          </a>
+        </li>
 
-                    <li class=" ">
-                      <a href="#service/add"> <i class="icon-cog"></i>
-                        <span>Add Service</span>
-                      </a>
-                    </li>
-                    
-                    <li class=" ">
-                      <a href="#service/view"> <i class="icon-cog"></i>
-                        <span>View Services</span>
-                      </a>
-                    </li>
+        <li class=" ">
+          <a href="#service/add" rel="popover" data-trigger="hover" data-placement="left" data-content="Popover">
+            <i class="icon-bolt"></i>
+            <span>Add Service</span>
+          </a>
+        </li>
 
-                  </ul>
-                </div>
+        <li class=" ">
+          <a href="#service/view">
+            <i class="icon-bolt"></i>
+            <span>View Services</span>
+          </a>
+        </li>
+        <div class="hr"></div>
 
-                <!-- <div id="sidebar-nav-right" class="sidebar-nav">
-                  <div class="btn-grp">
-                    <a href="#patient/add" class="btn">
-                      <span>Add Patient</span>
-                    </a>
+        <li class=" ">
+          <a href="#app/add">
+            <i class="icon-cloud-upload"></i>
+            <span>Upload Apps</span>
+          </a>
+        </li>
+        <li class=" ">
+          <a href="#app/view">
+            <i class="icon-cloud-download"></i>
+            <span>Download Apps</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-                    <a href="#visit/add" class="btn">
-                      <span>Add Visit</span>
-                    </a>
+    <!-- <div id="sidebar-nav-right" class="sidebar-nav">
+    <div class="btn-grp">
+      <a href="#patient/add" class="btn">
+        <span>Add Patient</span>
+      </a>
 
-                    <a href="#service/view" class="btn">
-                      <span>View Services</span>
-                    </a>
+      <a href="#visit/add" class="btn">
+        <span>Add Visit</span>
+      </a>
 
-                    <a href="#service/add" class="btn">
-                      <span>Upload a Service</span>
-                    </a>
+      <a href="#service/view" class="btn">
+        <span>View Services</span>
+      </a>
 
+      <a href="#service/add" class="btn">
+        <span>Upload a Service</span>
+      </a>
 
-                    <a href="index.html" class="btn btn-primary">
-                      <span>Log Out</span>
-                    </a>
-                  </div>
-                </div> -->
+      <a href="index.html" class="btn btn-primary">
+        <span>Log Out</span>
+      </a>
+    </div>
+  </div>
+  -->
+  <div id="main-content" class="content">
+    <!-- Main Content Placeholder --> </div>
+  <footer>
+    <p>
+      © 2013
+      <a href="#">Mohit Singh Kanwal @ NUS</a>
+    </p>
+  </footer>
 
-                <div id="main-content" class="content">
-                  <!-- Main Content Placeholder -->
-                </div>
-                <footer>
-                <p>
-                  © 2013
-                  <a href="#">Mohit Singh Kanwal @ NUS</a>
-                </p>
-              </footer>
+</div>
 
-              </div>
-
-
-            </body>
-            </html>
+</body>
+</html>
