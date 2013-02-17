@@ -3,7 +3,10 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 		'dashboard': 'loadDashboard',
 		'profile': 'loadProfile',
 		'patient/add': 'addPatient',
-		'visit/add': 'addVisit'
+		'visit/add': 'addVisit',
+		
+		'service/add' : 'addService',
+		'service/view' : 'viewService'
 	},
 
 	initialize: function() {
@@ -37,5 +40,19 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 		var visit = new Panex.Models.Patient({});
 		var addVisitView = new Panex.Views.VisitAdd();
 		Panex.mainContent.show(addVisitView);
+	},
+
+	// Services
+	addService: function() {
+		var visit = new Panex.Models.Service({});
+		var addServiceNew = new Panex.Views.ServiceAdd();
+		Panex.mainContent.show(addServiceNew);
+		console.log("[Router] Loading Add Service Page completed");
+	},
+
+	viewService: function() {
+		var serviceView = new Panex.Views.ServiceView();
+		Panex.mainContent.show(serviceView);
+		console.log("[Router] Loading View Service Page completed");
 	}
 });

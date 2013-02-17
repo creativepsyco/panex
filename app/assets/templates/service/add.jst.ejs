@@ -1,0 +1,86 @@
+<div class="span10 well">
+  <div class="row">
+    <div class="span1">
+      <a href="http://critterapp.pagodabox.com/others/admin" class="thumbnail">
+        <img src="http://critterapp.pagodabox.com/img/user.jpg" alt=""></a>
+    </div>
+    <div class="span3">
+      <p>G32176111T</p>
+      <p> <strong>First Last Name</strong>
+      </p>
+      <span class=" badge badge-warning">8 visits</span>
+      <span class=" badge badge-info">15 data-sets</span>
+    </div>
+  </div>
+</div>
+
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="dateOfVisit">Visit Date</label>
+    <div class="controls">
+      <input type="text" id="dateOfVisit" data-behaviour="datepicker"></div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="visitType">Visit Type</label>
+    <div class="controls">
+      <select id="visitType">
+        <option value="1">Clinic</option>
+        <option value="2">Phone</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="remarks">Remarks</label>
+    <div class="controls">
+      <textarea id="remarks" placeholder="Enter Remarks if Any"></textarea>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <span class="btn btn-success fileinput-button"> <i class="icon-plus icon-white"></i>
+        <span>Add patient data files...</span>
+        <input type="file" name="files[]" multiple=""></span>
+    </div>
+
+  </div>
+
+  <div class="span11">
+    <table role="presentation" class="table table-striped">
+      <tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery">
+        <tr class="template-upload fade in">
+          <td class="preview">
+            <span class="fade"></span>
+          </td>
+          <td class="name">
+            <span>removeCalInstance_5.diff</span>
+          </td>
+          <td class="size">
+            <span>21.26 KB</span>
+          </td>
+
+          <td class="error" colspan="2">
+            <span class="label label-important">Error</span>
+            Filetype not allowed
+          </td>
+
+          <td class="cancel">
+            <button class="btn btn-warning"> <i class="icon-ban-circle icon-white"></i>
+              <span>Cancel</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+
+      <button type="submit" class="btn btn-primary btn-large">Add Visit Information</button>
+    </div>
+  </div>
+</form>
