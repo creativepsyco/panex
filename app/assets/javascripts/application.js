@@ -17,6 +17,7 @@
 //= require backbone.marionette
 //= require panex
 //= require bootstrap
+//= require bootstrap-popover
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

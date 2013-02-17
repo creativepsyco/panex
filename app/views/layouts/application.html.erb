@@ -8,8 +8,8 @@
   <%= csrf_meta_tags %></head>
   <script type="text/javascript">
 
-  $(document).on("focus", "a[rel~='popover']", function(e){
-    $(this).popover();
+  $(document).ready(function($) {
+    $("[rel='popover']").popover();
   });
 
   $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
@@ -87,7 +87,7 @@
             <span>Add Visit</span>
           </a>
         </li>
-
+<a href="#" class="btn" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on right">Popover on right</a>
         <li class=" ">
           <a href="#service/add" rel="popover" data-trigger="hover" data-placement="left" data-content="Popover">
             <i class="icon-bolt"></i>
