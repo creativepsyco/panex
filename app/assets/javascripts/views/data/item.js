@@ -1,6 +1,6 @@
-Panex.Views.PatientRow = Backbone.Marionette.ItemView.extend({
-	template: JST['patient/row'],
-	tagName: 'tr',
+Panex.Views.DataItem = Backbone.Marionette.ItemView.extend({
+	template: JST['data/item'],
+	className: 'span2 data-item',
 	
 	isSelected: false,
 
@@ -9,7 +9,7 @@ Panex.Views.PatientRow = Backbone.Marionette.ItemView.extend({
 		'focus' : 'onHover'
 	},
 	ui: {
-		tr: 'tr'
+
 	},
 	initialize: function() {
 		
@@ -20,7 +20,7 @@ Panex.Views.PatientRow = Backbone.Marionette.ItemView.extend({
 	},
 
 	onClick: function() {
-		console.log("[PatientRow] Item Clicked");
+		console.log("[DataItem] Item Clicked");
 		// mark self as selected
 		if(!this.isSelected) {
 			this.isSelected = true;
@@ -32,6 +32,6 @@ Panex.Views.PatientRow = Backbone.Marionette.ItemView.extend({
 	},
 
 	onHover: function() {
-		console.log("[PatientRow] Hover Event");
+		console.log("[DataItem] Hover Event");
 	}
 });

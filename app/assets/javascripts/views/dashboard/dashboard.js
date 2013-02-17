@@ -22,6 +22,7 @@ Panex.Views.Dashboard = Backbone.Marionette.ItemView.extend({
 			collection: patientCollection,
 			itemView: Panex.Views.PatientRow
 		});
+		Panex.table.reset();
 		Panex.table.show(table);
 	}
 });
