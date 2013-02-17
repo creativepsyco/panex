@@ -10,12 +10,13 @@ Panex.Routers.Router = Backbone.Marionette.AppRouter.extend({
 	},
 
 	loadDashboard: function () {
-		var patientCollection = new Panex.Collections.PatientCollection([{name:'Mohit'}]);
-		var table = new Panex.Views.PatientTable({
-			collection: patientCollection,
-			itemView: Panex.Views.PatientRow
-		});
-		Panex.table.show(table);
+		// var patientCollection = new Panex.Collections.PatientCollection([{name:'Mohit'}]);
+		// var table = new Panex.Views.PatientTable({
+		// 	collection: patientCollection,
+		// 	itemView: Panex.Views.PatientRow
+		// });
+		var table = new Panex.Views.Dashboard();
+		Panex.mainContent.show(table);
 	},
 
 	loadProfile: function () {
