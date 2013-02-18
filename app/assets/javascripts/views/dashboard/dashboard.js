@@ -1,17 +1,19 @@
-Panex.Views.Dashboard = Backbone.Marionette.ItemView.extend({
+Panex.Views.Dashboard = Backbone.Marionette.Layout.extend({
 	template: JST['dashboard/dashboard'],
 	events: {
 		'click #searchButton' : 'onSearch'
 	},
 	ui: {
-		
+		dataPanel : "#bottom-panel"
 	},
 	initialize: function() {
 		
 	},
 	
 	onRender: function() {
-
+		var dataLayout = new Panex.Views.DataGrid();
+		this.ui.dataPanel.show(dataLayout);
+		console.log("[Dashboard] Data Panel Loaded");
 	},
 
 	onSearch: function() {
